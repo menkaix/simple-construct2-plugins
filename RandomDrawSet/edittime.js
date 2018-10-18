@@ -1,17 +1,17 @@
 ﻿function GetPluginSettings()
 {
 	return {
-		"name":			"SpellChecker",				// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
-		"id":			"SpellChecker",				// this is used to identify this plugin and is saved to the project; never change it
+		"name":			"RandomDrawSet",				// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
+		"id":			"RandomDrawSet",				// this is used to identify this plugin and is saved to the project; never change it
 		"version":		"1.0",					// (float in x.y format) Plugin version - C2 shows compatibility warnings based on this
-		"description":	"Checks the spelling in the game",
-		"author":		"mendrika/nelli-studio",
+		"description":	"<appears at the bottom of the insert object dialog>",
+		"author":		"<menkaix>",
 		"help url":		"mailto:mendrika.irina@gmail.com",
 		"category":		"General",				// Prefer to re-use existing categories, but you can set anything here
 		"type":			"object",				// either "world" (appears in layout and is drawn), else "object"
 		"rotatable":	true,					// only used when "type" is "world".  Enables an angle property on the object.
 		"flags":		0						// uncomment lines to enable flags...
-						| pf_singleglobal		// exists project-wide, e.g. mouse, keyboard.  "type" must be "object".
+					//	| pf_singleglobal		// exists project-wide, e.g. mouse, keyboard.  "type" must be "object".
 					//	| pf_texture			// object has a single texture (e.g. tiled background)
 					//	| pf_position_aces		// compare/set/get x, y...
 					//	| pf_size_aces			// compare/set/get width, height...
@@ -55,8 +55,10 @@
 //				script_name);		// corresponding runtime function name
 				
 // example				
-AddStringParam("text", "Enter a text to test if well spelled.");
-AddCondition(0, cf_none, "SpellCheck", "My category", "{0} has correct spelling", "Use Hunspell to check spelling!", "MyCondition");
+AddNumberParam("Number", "Enter a number to test if positive.");
+AddCondition(0, cf_none, "Is number positive", "My category", "{0} is positive", "Description for my condition!", "MyCondition");
+
+AddCondition(1, cf_none, "List is empty", "My category", "{0} is positive", "Description for my condition!", "IsEmpty");
 
 ////////////////////////////////////////
 // Actions
@@ -73,6 +75,9 @@ AddCondition(0, cf_none, "SpellCheck", "My category", "{0} has correct spelling"
 AddStringParam("Message", "Enter a string to alert.");
 AddAction(0, af_none, "Alert", "My category", "Alert {0}", "Description for my action!", "MyAction");
 
+AddStringParam("Element", "Element To Add");
+AddAction(1, af_none, "Add One", "My category", "Add {0}", "Adds one String to the List", "AddOne");
+
 ////////////////////////////////////////
 // Expressions
 
@@ -86,6 +91,8 @@ AddAction(0, af_none, "Alert", "My category", "Alert {0}", "Description for my a
 
 // example
 AddExpression(0, ef_return_number, "Leet expression", "My category", "MyExpression", "Return the number 1337.");
+
+AddExpression(1, ef_return_string, "Leet expression", "My category", "GetOne", "Return the number 1337.");
 
 ////////////////////////////////////////
 ACESDone();
