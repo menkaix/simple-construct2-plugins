@@ -189,7 +189,7 @@ cr.plugins_.RandomDrawSet = function(runtime)
 	Exps.prototype.GetOne = function (ret)	// 'ret' must always be the first parameter - always return the expression's result through it!
 	{
 		//shuffle the content
-		for(i=0 ; 1<content.length ; i++){
+		for(var i=0 ; 1<content.length ; i++){
 			other = Math.floor(Math.random() * content.length);
 			temp = content[i];
 			content[i] = content[other];
@@ -197,8 +197,12 @@ cr.plugins_.RandomDrawSet = function(runtime)
 		
 		}
 		
-		
-		ret.ef_return_string(content.pop());				// return our value
+		if(content.length>0){
+			ret.set_string(content.pop());
+		}else{
+			ret.set_string("");
+		}
+						// return our value
 		// ret.set_float(0.5);			// for returning floats
 		// ret.set_string("Hello");		// for ef_return_string
 		// ret.set_any("woo");			// for ef_return_any, accepts either a number or string

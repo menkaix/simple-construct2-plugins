@@ -5,7 +5,7 @@
 		"id":			"RandomDrawSet",				// this is used to identify this plugin and is saved to the project; never change it
 		"version":		"1.0",					// (float in x.y format) Plugin version - C2 shows compatibility warnings based on this
 		"description":	"<appears at the bottom of the insert object dialog>",
-		"author":		"<menkaix>",
+		"author":		"menkaix",
 		"help url":		"mailto:mendrika.irina@gmail.com",
 		"category":		"General",				// Prefer to re-use existing categories, but you can set anything here
 		"type":			"object",				// either "world" (appears in layout and is drawn), else "object"
@@ -58,7 +58,7 @@
 AddNumberParam("Number", "Enter a number to test if positive.");
 AddCondition(0, cf_none, "Is number positive", "My category", "{0} is positive", "Description for my condition!", "MyCondition");
 
-AddCondition(1, cf_none, "List is empty", "My category", "{0} is positive", "Description for my condition!", "IsEmpty");
+AddCondition(1, cf_none, "List is empty", "My category", " is empty", "Description for my condition!", "IsEmpty");
 
 ////////////////////////////////////////
 // Actions
