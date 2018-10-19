@@ -146,7 +146,7 @@ cr.plugins_.RandomDrawSet = function(runtime)
 	Cnds.prototype.IsEmpty = function ()
 	{
 		// return true if number is positive
-		return !(content.length >= 0);
+		return !(content.length > 0);
 	};
 	
 	// ... other conditions here ...
@@ -178,20 +178,21 @@ cr.plugins_.RandomDrawSet = function(runtime)
 	function Exps() {};
 	
 	// the example expression
-	Exps.prototype.MyExpression = function (ret)	// 'ret' must always be the first parameter - always return the expression's result through it!
-	{
-		ret.set_int(1337);				// return our value
-		// ret.set_float(0.5);			// for returning floats
-		// ret.set_string("Hello");		// for ef_return_string
-		// ret.set_any("woo");			// for ef_return_any, accepts either a number or string
-	};
+	//Exps.prototype.MyExpression = function (ret)	// 'ret' must always be the first parameter - always return the expression's result through it!
+	//{
+	//	ret.set_int(1337);				// return our value
+	//	// ret.set_float(0.5);			// for returning floats
+	//	// ret.set_string("Hello");		// for ef_return_string
+	//	// ret.set_any("woo");			// for ef_return_any, accepts either a number or string
+	//};
 	
 	Exps.prototype.GetOne = function (ret)	// 'ret' must always be the first parameter - always return the expression's result through it!
 	{
 		//shuffle the content
-		for(var i=0 ; 1<content.length ; i++){
-			other = Math.floor(Math.random() * content.length);
-			temp = content[i];
+		for(var i=0 ; i<content.length ; i++){
+			//console.log("swap "+i);
+			var other = Math.floor(Math.random() * content.length);
+			var temp = content[i];
 			content[i] = content[other];
 			content[other] = temp;
 		

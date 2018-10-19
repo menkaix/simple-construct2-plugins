@@ -4,7 +4,7 @@
 		"name":			"RandomDrawSet",				// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
 		"id":			"RandomDrawSet",				// this is used to identify this plugin and is saved to the project; never change it
 		"version":		"1.0",					// (float in x.y format) Plugin version - C2 shows compatibility warnings based on this
-		"description":	"<appears at the bottom of the insert object dialog>",
+		"description":	"list of string from which elements are drawn out randomly",
 		"author":		"menkaix",
 		"help url":		"mailto:mendrika.irina@gmail.com",
 		"category":		"General",				// Prefer to re-use existing categories, but you can set anything here
@@ -90,9 +90,9 @@ AddAction(1, af_none, "Add One", "My category", "Add {0}", "Adds one String to t
 //				 description);	// description in expressions panel
 
 // example
-AddExpression(0, ef_return_number, "Leet expression", "My category", "MyExpression", "Return the number 1337.");
+//AddExpression(0, ef_return_number, "Leet expression", "My category", "MyExpression", "Return the number 1337.");
 
-AddExpression(1, ef_return_string, "Leet expression", "My category", "GetOne", "Return the number 1337.");
+AddExpression(1, ef_return_string, "get one element", "My category", "GetOne", "pick one string frome the list");
 
 ////////////////////////////////////////
 ACESDone();
