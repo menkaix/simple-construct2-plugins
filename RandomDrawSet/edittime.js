@@ -78,6 +78,12 @@ AddAction(0, af_none, "Alert", "My category", "Alert {0}", "Description for my a
 AddStringParam("Element", "Element To Add");
 AddAction(1, af_none, "Add One", "My category", "Add {0}", "Adds one String to the List", "AddOne");
 
+AddStringParam("Element", "Elements To Add");
+AddStringParam("Separator", "separator for these");
+AddAction(2, af_none, "Add Bulk", "My category", "Add {0}", "Adds one String to the List", "AddBulk");
+
+
+
 ////////////////////////////////////////
 // Expressions
 

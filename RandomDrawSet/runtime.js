@@ -169,6 +169,19 @@ cr.plugins_.RandomDrawSet = function(runtime)
 		content.push(myparam) ;
 	};
 	
+	Acts.prototype.AddBulk = function (myparam, mySeparator)
+	{
+		var myElements = myparam.split(mySeparator);
+		
+		myElements.forEach(function (thisElement){
+			
+			content.push(thisElement)
+			
+		});
+		
+		
+	};
+	
 	// ... other actions here ...
 	
 	pluginProto.acts = new Acts();
