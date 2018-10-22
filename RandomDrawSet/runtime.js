@@ -222,6 +222,12 @@ cr.plugins_.RandomDrawSet = function(runtime)
 		// ret.set_any("woo");			// for ef_return_any, accepts either a number or string
 	};
 	
+	Exps.prototype.ElementCount = function (ret)	// 'ret' must always be the first parameter - always return the expression's result through it!
+	{
+		
+		ret.set_int(content.length);
+	}
+	
 	// ... other expressions here ...
 	
 	pluginProto.exps = new Exps();

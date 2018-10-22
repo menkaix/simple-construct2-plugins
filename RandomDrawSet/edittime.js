@@ -99,6 +99,7 @@ AddAction(2, af_none, "Add Bulk", "My category", "Add {0}", "Adds one String to 
 //AddExpression(0, ef_return_number, "Leet expression", "My category", "MyExpression", "Return the number 1337.");
 
 AddExpression(1, ef_return_string, "get one element", "My category", "GetOne", "pick one string frome the list");
+AddExpression(1, ef_return_number, "elements left", "My category", "ElementCount", "elements left in list");
 
 ////////////////////////////////////////
 ACESDone();
